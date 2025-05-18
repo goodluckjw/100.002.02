@@ -1040,7 +1040,7 @@ def run_search_logic(query, unit="법률"):
                         출력덩어리.append(highlight(항내용, query))
                     출력덩어리.extend(항덩어리)
             if 출력덩어리:
-                law_results.append("<br>".join(출력덩어리))
+                law_results.append.join(출력덩어리)
         if law_results:
             result_dict[law["법령명"]] = law_results
     return result_dict
