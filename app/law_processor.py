@@ -15,8 +15,11 @@ def highlight(text, query):
     """검색어를 HTML로 하이라이트 처리해주는 함수"""
     if not query or not text:
         return text
+       # 중간점을 가운뎃점으로 정규화 (하이라이트에서도 일관성 유지)
+    normalized_query = normalize_middle_dot(query)
+    
     # 정규식 특수문자 이스케이프
-    escaped_query = re.escape(query)
+    escaped_query = re.escape(normalized_query)
     # 대소문자 구분없이 검색
     pattern = re.compile(f'({escaped_query})', re.IGNORECASE)
     return pattern.sub(r'<mark>\1</mark>', text)
