@@ -629,8 +629,8 @@ def run_amendment_logic(find_word, replace_word):
     normalized_replace_word = normalize_middle_dot(replace_word)
     
     # 새로 추가: 검색어 전처리
-    processed_find_word, is_phrase = preprocess_search_term(find_word)
-    processed_replace_word, _ = preprocess_search_term(replace_word)
+    processed_find_word, is_phrase = preprocess_search_term(normalized_find_word)
+    processed_replace_word, _ = preprocess_search_term(normalized_replace_word)
     
     # 부칙 정보 확인을 위한 변수
     부칙_검색됨 = False  # 부칙에서 검색어가 발견되었는지 여부
