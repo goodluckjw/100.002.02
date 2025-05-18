@@ -983,7 +983,7 @@ def run_search_logic(query, unit="법률"):
   
     result_dict = {}
     keyword_clean = clean(query)
-    for law in get_law_list_from_api(query):
+    for law in get_law_list_from_api(normalized_query):
         mst = law["MST"]
         xml_data = get_law_text_by_mst(mst)
         if not xml_data:
